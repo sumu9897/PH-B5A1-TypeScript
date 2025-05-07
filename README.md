@@ -38,7 +38,7 @@ type Person = {
 };
 type PersonKeys = keyof Person; // "name" | "age"
 
-const key: PersonKeys = "name"; // 
+const key: PersonKeys = "name";
 
 ```
 ## 3. What is type inference in TypeScript? Why is it helpful?
