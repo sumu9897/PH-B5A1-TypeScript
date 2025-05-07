@@ -18,7 +18,7 @@
     { title: "Book B", rating: 3.2 },
     { title: "Book C", rating: 5.0 },
   ];
-  console.log("Filtered Books:", filterByRating(books));
+  //   console.log("Filtered Books:", filterByRating(books));
 
-
+  
 }
