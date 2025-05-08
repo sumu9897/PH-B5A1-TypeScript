@@ -27,7 +27,9 @@ type Admin = {
 
 ## 2. What is the use of the `keyof` keyword in TypeScript?
 
-- `keyof` gives you the keys (property names) of an object type as a union.
+The `keyof` keyword is used to get all the property names (keys) of an object type as a union of string literals.
+
+This helps write flexible and type-safe code when working with object keys.
 
 ### Example:
 
@@ -36,27 +38,31 @@ type Person = {
   name: string;
   age: number;
 };
-type PersonKeys = keyof Person; // "name" | "age"
 
-const key: PersonKeys = "name";
+// keyof Person gives: "name" | "age"
+type PersonKeys = keyof Person;
 
+const key: PersonKeys = "name"; // valid
 ```
+
 ## 3. What is type inference in TypeScript? Why is it helpful?
 
-- TypeScript **automatically guesses the type** of a variable when you don't write it yourself.
-- This is called **type inference**.
+Type inference means that TypeScript can figure out the type of a variable, even if you don’t explicitly write the type.
 
-### Why it's helpful:
-- Saves time  
-- Reduces errors   
-- Makes code shorter and cleaner 
+When a value is assigned during declaration, TypeScript automatically understands the type from the value.
+
+### Why it’s helpful:
+
+- Saves time by reducing the need to manually write types.
+- Makes code cleaner and easier to read.
+- Prevents mistakes by catching type-related errors early.
 
 ### Example:
 
 ```ts
-let name = "John"; // TypeScript knows it's a string
+let userName = "John"; // TypeScript infers this as a string
 
-name = 123; // Error: number is not assignable to string
+userName = 123; //  Error: number is not assignable to string
 ```
 
 
